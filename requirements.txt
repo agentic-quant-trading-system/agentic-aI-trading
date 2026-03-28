@@ -1,5 +1,5 @@
 azure-functions
-yfinance
+yfinance==0.2.58
 pandas
 requests
 azure-storage-blob
