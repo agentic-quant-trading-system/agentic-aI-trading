@@ -33,8 +33,9 @@ try:
 
     def fetch_market_data():
         logging.info("Fetching ETF data...")
-        tickers = ["XLK", "XLU", "SPY"]
-        data = yf.download(tickers, period="1y", interval="1d")
+        # Add the new cyclical and defensive ETFs
+        tickers = ["SPY", "XLK", "XLU", "XLF", "XLV", "XLE", "XLY"]
+        data = yf.download(tickers, period="10y", interval="1d")
         filename = f"market_data_{datetime.now().strftime('%Y%m%d')}.csv"
         filepath = os.path.join(tempfile.gettempdir(), filename)
         data.to_csv(filepath)
